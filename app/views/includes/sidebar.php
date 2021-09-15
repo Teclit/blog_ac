@@ -1,3 +1,4 @@
+        <!-- Sidebar  -->
         <!-- Side widgets-->
         <div class="col-lg-4">
             <!-- Search widget-->
@@ -121,15 +122,27 @@
                         <hr>
                     </div>
 
-
-
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <img src="<?php echo URLROOT;?>/public/img/img-5.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body">
+                                <a href="#" target="_blank">  
+                                    <h6 class="lead text-justify">ዓለም ምስጠለብን ቀረብን ክነጻጸር እንከሎ ፍጹም ዝመጣጠን ኣይኰነን።</h6> 
+                                </a>
+                                <p class="card-text"><small class="text-muted">ጥሪ 1, 2021</small></p>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
 
                 </div>
             </div>
             <!-- Fin Recent Post -->
         </div>
         <!-- fin Side widgets col-lg-4-->
+        <!--END Sidebar  -->
     </div>
-    <!-- fin row  postsBloc--->
+    <!--END Row  -->
 </div>
-    <!-- Fin container -->
