@@ -5,7 +5,7 @@
         <div class="col-lg-8">
             <!-- Category 01 -->
             <div class="row">
-                <h1> ወቕታዊ ጉዳያ</h1><hr>
+                <h1> ዝተማሓየሸ ኣነባብራ </h1><hr>
                 <div class="col-lg-12 mb-5">
                     <div class="card">
                         <img class="card-img-top img-card-current" src="<?php echo URLROOT;?>/public/img/banner.jpg" class="card-img-top" alt="...">
@@ -24,7 +24,7 @@
                                     ሓያል ናይ ለይቲን መዓልቲን ወፍሪንጻዕርን ኣብ ምክያድ ይርከባ።
                                     ኣብ ሃገርና’ውን ነዚ ኣብ ግምት፠፠፠፠፨ዘእተወ፡ ደረጃ መነባብሮ ህዝቢ
                             </p>
-                            <a class="btn btn-dark" href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark" href="<?php echo URLROOT; ?>/fullpost" _target="blank">ኣንብብ →</a>
                         </div>
                     </div>
                 </div>
@@ -38,48 +38,48 @@
                             ፍጹም ዝመጣጠን ኣይኰነን።</h2>
                             <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
                                 ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
-                            <a class="btn btn-dark   " href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark   " href=" <?php echo URLROOT; ?>/pages/fullpost">ኣንብብ →</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top img-post " src="<?php echo URLROOT;?>/public/img/img-8.jpg" alt="..." /></a>
+                        <a href="  <?php echo URLROOT; ?>/pages/fullpost"><img class="card-img-top img-post " src="<?php echo URLROOT;?>/public/img/img-8.jpg" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">ጥሪ 1, 2021</div>
                             <h2 class="card-title h4">ዓለም ምስጠለብን ቀረብን ክነጻጸር እንከሎ
                             ፍጹም ዝመጣጠን ኣይኰነን።</h2>
                             <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
                                 ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
-                            <a class="btn btn-dark   " href="#!">ኣንብብ →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top img-post " src="<?php echo URLROOT;?>/public/img/img-2.jpg" alt="..." /></a>
-                        <div class="card-body">
-                            <div class="small text-muted">ጥሪ 1, 2021</div>
-                            <h2 class="card-title h4">ዓለም ምስጠለብን ቀረብን ክነጻጸር እንከሎ
-                            ፍጹም ዝመጣጠን ኣይኰነን።</h2>
-                            <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
-                                ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
-                            <a class="btn btn-dark   " href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark   " href="  <?php echo URLROOT; ?>/pages/fullpost">ኣንብብ →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top img-post " src="<?php echo URLROOT;?>/public/img/img-3.jpg" alt="..." /></a>
+                        <a href="  <?php echo URLROOT; ?>/pages/fullpost"><img class="card-img-top img-post " src="<?php echo URLROOT;?>/public/img/img-2.jpg" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">ጥሪ 1, 2021</div>
                             <h2 class="card-title h4">ዓለም ምስጠለብን ቀረብን ክነጻጸር እንከሎ
                             ፍጹም ዝመጣጠን ኣይኰነን።</h2>
                             <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
                                 ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
-                            <a class="btn btn-dark   " href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark   " href="  <?php echo URLROOT; ?>/pages/fullpost">ኣንብብ →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <a href="  <?php echo URLROOT; ?>/pages/fullpost"><img class="card-img-top img-post " src="<?php echo URLROOT;?>/public/img/img-3.jpg" alt="..." /></a>
+                        <div class="card-body">
+                            <div class="small text-muted">ጥሪ 1, 2021</div>
+                            <h2 class="card-title h4">ዓለም ምስጠለብን ቀረብን ክነጻጸር እንከሎ
+                            ፍጹም ዝመጣጠን ኣይኰነን።</h2>
+                            <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
+                                ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
+                            <a class="btn btn-dark   " href="  <?php echo URLROOT; ?>/pages/fullpost">ኣንብብ →</a>
                         </div>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                                     ሓያል ናይ ለይቲን መዓልቲን ወፍሪንጻዕርን ኣብ ምክያድ ይርከባ።
                                     ኣብ ሃገርና’ውን ነዚ ኣብ ግምት፠፠፠፠፨ዘእተወ፡ ደረጃ መነባብሮ ህዝቢ
                             </p>
-                            <a class="btn btn-dark" href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark" href="  <?php echo URLROOT; ?>/pages/fullpost">ኣንብብ →</a>
                         </div>
                     </div>
                 </div>
@@ -260,7 +260,7 @@
                             ፍጹም ዝመጣጠን ኣይኰነን።</h2>
                             <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
                                 ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
-                            <a class="btn btn-dark   " href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark   " href="  <?php echo URLROOT; ?>/pages/fullpost">ኣንብብ →</a>
                         </div>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
                             ፍጹም ዝመጣጠን ኣይኰነን።</h2>
                             <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
                                 ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
-                            <a class="btn btn-dark   " href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark   " href="  <?php echo URLROOT; ?>/pages/fullpost">ኣንብብ →</a>
                         </div>
                     </div>
                 </div>
@@ -315,7 +315,7 @@
                             ፍጹም ዝመጣጠን ኣይኰነን።</h2>
                             <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
                                 ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
-                            <a class="btn btn-dark   " href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark   " href="#!">ኣንብብ &rang;&rang;</a>
                         </div>
                     </div>
                 </div>
@@ -330,7 +330,7 @@
                             </a>
                             <p class="card-text">ተማሓየሸ ኣነባብራ ክህልዎምን፠፠።ኣብ ህይወት መሰረታውያን ነገራት
                                 ንኸውሕሱን ብዙሓት ኣማራጺታትዝዀኑ.</p>
-                            <a class="btn btn-dark   " href="#!">ኣንብብ →</a>
+                            <a class="btn btn-dark   " href="#!">ኣንብብ &rang;&rang;</a>
                         </div>
                     </div>
                 </div>
