@@ -19,7 +19,7 @@
                         <div class="col-sm-6">
                             <ul class="list-unstyled mb-0">
                                 <li><a href="#!">ዘጽንዑ</a></li>
-                                <li><a href="#!"> ናይቲ </a></li>
+                                <li><a href="#!">ናይቲ </a></li>
                                 <li><a href="#!">ምትላል</a></li>
                             </ul>
                         </div>
@@ -44,7 +44,7 @@
             <!-- Recent Posts img-150x100-->
             <div class="card" >
                 <div class="card-header bg-light">
-                    <h2 class="lead"> Recent Posts</h2>
+                    <h2 class="lead"> ግዝያዊ ዓንቀጻት</h2>
                 </div>
                 <div class="recentpost m-3">
                     <div class="row g-0">

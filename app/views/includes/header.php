@@ -27,15 +27,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="mx-auto navbar-nav   ">
                         <li class="nav-item me-2"><a class="nav-link active" href="#">ኣዳራሽ</a></li>
-                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/blog">ዓንቀጽ</a></li>
+                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/blog">ዓናቅጽ</a></li>
                         <li class="nav-item me-2"><a class="nav-link" href="#">ርእሰ ዓንቀጽ</a></li>
-                        <li class="nav-item me-2"><a class="nav-link" href="#">ወቕታዊ ጉዳያት</a></li>
+                        <li class="nav-item me-2"><a class="nav-link" href="#">ዓምድታት</a></li>
                         <li class="nav-item me-2"><a class="nav-link" href="#">ዛዕባ</a></li>
-                        <li class="nav-item me-2"><a class="nav-link" href="#">ቪድዮ</a></li>
-                        <li class="nav-item me-2"><a class="nav-link" href="#">ሕሳብ</a></li>
                         <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/about">ብዛዕባና</a></li>
                         <li class="nav-item me-2"><a class="nav-link" href="#!">ኽትረክቡና</a></li>
-                        
+                    </ul>
+                    <ul class="me-5 navbar-nav bg-light  border border-light px-3">
+                        <li class="nav-item me-2"><a class="nav-link text-dark" href="#">ተመዝገዝቡ</a></li>
+                        <li class="nav-item me-2"><a class="nav-link text-dark" href="#">ሰዓቡና</a></li>
                     </ul>
                 </div>
                 <hr>
