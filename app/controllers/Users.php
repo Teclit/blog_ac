@@ -16,12 +16,12 @@ class Users extends Controller {
             'confirmPasswordError' => ''
         ];
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Process form
         // Sanitize POST data
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-            $data = [
+              $data = [
                 'username' => trim($_POST['username']),
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
@@ -56,15 +56,15 @@ class Users extends Controller {
 
            // Validate password on length, numeric values,
             if(empty($data['password'])){
-                $data['passwordError'] = 'Please enter password.';
+              $data['passwordError'] = 'Please enter password.';
             } elseif(strlen($data['password']) < 6){
-                $data['passwordError'] = 'Password must be at least 8 characters';
+              $data['passwordError'] = 'Password must be at least 8 characters';
             } elseif (preg_match($passwordValidation, $data['password'])) {
-                $data['passwordError'] = 'Password must be have at least one numeric value.';
+              $data['passwordError'] = 'Password must be have at least one numeric value.';
             }
 
             //Validate confirm password
-            if (empty($data['confirmPassword'])) {
+             if (empty($data['confirmPassword'])) {
                 $data['confirmPasswordError'] = 'Please enter password.';
             } else {
                 if ($data['password'] != $data['confirmPassword']) {

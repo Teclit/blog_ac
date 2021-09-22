@@ -1,8 +1,7 @@
 <?php
 class Pages extends Controller {
     public function __construct() {
-        // $this->userModel = $this->model('User');
-        // $this->userModel = $this->model('Pages');
+        //$this->userModel = $this->model('User');
     }
 
     public function index() {
@@ -10,32 +9,14 @@ class Pages extends Controller {
             'title' => 'Home page'
         ];
 
-        $this->view('pages/index', $data);
-
+        $this->view('index', $data);
     }
 
     public function about() {
-        $data = [
-            'title' => 'About page !!!'
-        ];
-
-        $this->view('pages/about', $data);
+        $this->view('about');
     }
 
-    public function blog() {
-        $data = [
-            'title' => 'blog page !!!'
-        ];
-
-        $this->view('pages/blog', $data);
-    }
-
-
-    public function fullpost() {
-        $data = [
-            'title' => 'Home page'
-        ];
-
-        $this->view('pages/fullpost', $data);
+    public function posts() {
+        $this->view('posts');
     }
 }
