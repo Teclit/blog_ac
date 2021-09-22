@@ -1,31 +1,29 @@
 <?php
-   require APPROOT . '/views/includes/head.php';
+    require APPROOT . '/views/includes/header.php';
+    require APPROOT . '/views/includes/navigation.php';
 ?>
+    <div class="container">
+        <div class="wrapper-login">
+            <h2>Sign in</h2>
 
-<div class="navbar">
-    <?php
-       require APPROOT . '/views/includes/navigation.php';
-    ?>
-</div>
+            <form action="<?php echo URLROOT; ?>/users/login" method ="POST">
+                <input type="text" placeholder="Username *" name="username">
+                <span class="invalidFeedback">
+                    <?php echo $data['usernameError']; ?>
+                </span>
 
-<div class="container-login">
-    <div class="wrapper-login">
-        <h2>Sign in</h2>
+                <input type="password" placeholder="Password *" name="password">
+                <span class="invalidFeedback">
+                    <?php echo $data['passwordError']; ?>
+                </span>
 
-        <form action="<?php echo URLROOT; ?>/users/login" method ="POST">
-            <input type="text" placeholder="Username *" name="username">
-            <span class="invalidFeedback">
-                <?php echo $data['usernameError']; ?>
-            </span>
+                <button id="submit" type="submit" value="submit">Submit</button>
 
-            <input type="password" placeholder="Password *" name="password">
-            <span class="invalidFeedback">
-                <?php echo $data['passwordError']; ?>
-            </span>
-
-            <button id="submit" type="submit" value="submit">Submit</button>
-
-            <p class="options">Not registered yet? <a href="<?php echo URLROOT; ?>/users/register">Create an account!</a></p>
-        </form>
+                <p class="options">Not registered yet? <a href="<?php echo URLROOT; ?>/users/register">Create an account!</a></p>
+            </form>
+        </div>
     </div>
-</div>
+
+<?php
+    require APPROOT . '/views/includes/footer.php';
+?>

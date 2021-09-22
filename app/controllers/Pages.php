@@ -13,10 +13,10 @@ class Pages extends Controller {
     }
 
     public function about() {
-        $this->view('about');
+        $this->view('pages/about');
     }
 
     public function posts() {
-        $this->view('posts');
+        $this->view('pages/blogs');
     }
 }
