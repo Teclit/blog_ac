@@ -19,4 +19,8 @@ class Pages extends Controller {
     public function posts() {
         $this->view('pages/blogs');
     }
+
+    public function fullpost() {
+        $this->view('pages/fullpost');
+    }
 }

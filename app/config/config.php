@@ -12,4 +12,4 @@
     define('URLROOT', 'http://localhost/Projects___/acranatblog');
 
     //Sitename
-    define('SITENAME', 'Login & Register script');
+    define('SITENAME', 'ኣክራናት');

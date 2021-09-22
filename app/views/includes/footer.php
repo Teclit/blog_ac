@@ -1,6 +1,6 @@
 
     <!-- Footer-->
-    <footer class="container-fluid py-5 bg-dark">
+    <footer class="container-fluid py-5 bg-dark bottom-0">
         <div class="container">
             <p class="m-0 text-center text-white"> ኩሉ መሰል ደራሲ ሕልው ኢዩ &copy; ኣክራናት 2021</p>
         </div>

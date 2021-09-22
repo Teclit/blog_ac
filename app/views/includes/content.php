@@ -1,3 +1,17 @@
+<!-- Page header with logo and tagline-->
+<header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">እንቓዕ ብደሓን መጻኩም !!!</h1>
+            <p class="lead mb-0">ንኽዳሎ ኸኣ ጸዓት የድልይኹን’ምበር፡ ቀረብ ጸዓት ኣብዚ
+                        ሕጂ እዋን ብደረጃ ዓለም ምስጠለብን ቀረብን ክነጻጸር እንከሎ
+                        ፍጹም ዝመጣጠን ኣይኰነን።</p>
+        </div>
+    </div>
+</header>
+
+
+
 <!-- Home Page -->
 <div class="container">
     <div class="row postsBloc my-5">

@@ -16,7 +16,9 @@
 
         <!-- Page header with logo and tagline-->
         <header class="container-fluid pt-3">
-            <h1 class="fw-bolder text-center brandheader">
-                <img src="<?php echo URLROOT;?>/public/img/brand.png" alt="Logo">
-            </h1>
+            <a href="<?php echo URLROOT; ?>">
+                <h1 class="fw-bolder text-center brandheader">
+                    <img src="<?php echo URLROOT;?>/public/img/brand.png" alt="Logo">
+                </h1>
+            </a>
         </header>
