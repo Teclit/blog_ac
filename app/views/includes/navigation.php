@@ -5,13 +5,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="mx-auto navbar-nav   ">
                         <li class="nav-item me-2"><a class="nav-link active" href="<?php echo URLROOT; ?>/index">ኣዳራሽ</a></li>
-                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/blogs">ዓናቅጽ</a></li>
+                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/blogs">ዓንቅጻት</a></li>
 
-                        <?php if(isset($_SESSION['user_id'])) : ?>
-                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/editorial">ርእሰ ዓንቀጽ</a></li>
+                    <?php if(isset($_SESSION['user_id'])) : ?>
+                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/dashboard">ሰሌዳ</a></li>
                         <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/artlicles">ዓምድታት</a></li>
                         <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/category">ዛዕባ</a></li>
-                        <?php endif; ?>
+                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/admins">ኣዳላዊ ዓምዲ</a></li>
+                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/comments">ርእይቶታት</a></li>
+                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/">ቀጥታዊ ዓንቀጽ</a></li>
+                    <?php endif; ?>
                         
                         <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/about">ብዛዕባና</a></li>
                         <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/contact">ኽትረክቡና</a></li>
