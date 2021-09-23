@@ -1,4 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
+*{
+    font-family: 'Scheherazade New', serif;
+}
 a {
 color: #000000;
 text-decoration: none;
@@ -9,6 +12,10 @@ color: #0a58ca;
 transform: scale(0.95);
 }
 
+.active {
+    border-bottom: 3px solid #000000;
+}
+
 .thumbnail {
     display: block;
     position: relative;
@@ -17,13 +24,16 @@ transform: scale(0.95);
 .posttitle {
     color: white;
     position: absolute;
-    bottom: 5%;
-    left: 0;
-    width: 100%;
+    bottom: 0%;
+    background-color: rgba(0, 0, 0, 0.5);
+    width:100%
 }
 
-.readArticle:hover { 
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-    z-index: 1;
+.headertitle:hover{
+    transform: scale(0.9)
+}
+
+.readArticle img:hover { 
+    -webkit-filter: grayscale(90%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(90%);
 }
