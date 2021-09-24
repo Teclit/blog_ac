@@ -23,6 +23,7 @@ transform: scale(0.95);
 
 .posttitle {
     color: white;
+    text-align: justify;
     position: absolute;
     bottom: 0%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -33,7 +34,12 @@ transform: scale(0.95);
     transform: scale(0.9)
 }
 
-.readArticle img:hover { 
+/* .readArticle img:hover */
+img:hover { 
     -webkit-filter: grayscale(90%); /* Safari 6.0 - 9.0 */
     filter: grayscale(90%);
+}
+
+.textJustify {
+    text-align: justify;
 }
