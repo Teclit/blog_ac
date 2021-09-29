@@ -4,23 +4,33 @@ class Pages extends Controller {
         //$this->userModel = $this->model('User');
     }
 
-    public function index() {
-        $data = [
-            'title' => 'Home page'
-        ];
-
-        $this->view('index', $data);
-    }
+    // public function index() {
+    //     $data = [
+    //         'title' => 'Home page'
+    //     ];
+        
+        
+    //     $this->view('index', $data);
+    // }
 
     public function about() {
-        $this->view('pages/about');
+        $data = [
+            'title' => 'about page'
+        ];
+        $this->view('pages/about', $data);
     }
 
     public function posts() {
-        $this->view('pages/blogs');
+        $data = [
+            'title' => 'posts page'
+        ];
+        $this->view('pages/blogs', $data);
     }
 
     public function fullpost() {
-        $this->view('pages/fullpost');
+        $data = [
+            'title' => 'fullpost page'
+        ];
+        $this->view('pages/fullpost', $data);
     }
 }

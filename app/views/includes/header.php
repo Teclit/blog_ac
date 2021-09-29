@@ -15,10 +15,10 @@
     <body>
 
         <!-- Page header with logo and tagline-->
-        <header class="container-fluid pt-3">
+        <header class="container-fluid pt-2">
             <a href="<?php echo URLROOT; ?>">
                 <h1 class="fw-bolder text-center brandheader">
-                    <img src="<?php echo URLROOT;?>/public/img/brand.png" alt="Logo">
+                    <img src="<?php echo URLROOT;?>/public/img/brand.png" alt="Logo" height="80%">
                 </h1>
             </a>
         </header>
