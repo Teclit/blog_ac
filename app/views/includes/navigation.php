@@ -7,7 +7,7 @@
                 <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
                     <ul class="mx-auto navbar-nav  text-center ">
                         <li class="nav-item me-2"><a class="nav-link active" href="<?php echo URLROOT; ?>/index">ኣዳራሽ</a></li>
-                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/blogs">ዓንቅጻት</a></li>
+                        <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/posts/">Posts</a></li>
 
                     <?php if(isset($_SESSION['user_id'])) : ?>
                         <li class="nav-item me-2"><a class="nav-link" href="<?php echo URLROOT; ?>/dashboard">ሰሌዳ</a></li>

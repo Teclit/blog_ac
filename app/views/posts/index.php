@@ -1,12 +1,7 @@
 <?php
-    require APPROOT . '/views/includes/head.php';
+    require APPROOT . '/views/includes/header.php';
+    require APPROOT . '/views/includes/navigation.php';
 ?>
-
-<div class="navbar dark">
-    <?php
-        require APPROOT . '/views/includes/navigation.php';
-    ?>
-</div>
 
 <div class="container">
     <?php if(isLoggedIn()): ?>
@@ -14,30 +9,33 @@
             Create
         </a>
     <?php endif; ?>
-
-    <?php foreach($data['posts'] as $post): ?>
-        <div class="container-item">
-            <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post->user_id): ?>
-                <a
-                    class="btn orange"
-                    href="<?php echo URLROOT . "/posts/update/" . $post->id ?>">
-                    Update
-                </a>
-                <form action="<?php echo URLROOT . "/posts/delete/" . $post->id ?>" method="POST">
-                    <input type="submit" name="delete" value="Delete" class="btn red">
-                </form>
-            <?php endif; ?>
-            <h2>
-                <?php echo $post->title; ?>
-            </h2>
-
-            <h3>
-                <?php echo 'Created on: ' . date('F j h:m', strtotime($post->created_at)) ?>
-            </h3>
-
-            <p>
-                <?php echo $post->body ?>
-            </p>
+    <section class="container my-4">
+        <div class="row g-0">
+            <p class="fs-2 fw-bold"> <span class="fs-1 me-2" >|</span> ነገራት<hr></p>
         </div>
-    <?php endforeach; ?>
+        <div class="row">
+            <?php foreach($data['posts'] as $post): ?>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thumbnail text-center">
+                        <img src="<?php echo URLROOT;?>/public/img/img-1.jpg" alt="" class=" img-fluid imgpost">
+                        <div class="pt-2">
+                            <a href="<?php echo URLROOT; ?>/fullpost" target="_blank"><h5 class="fw-bold textJustify">
+                                <?php echo $post->title; ?> 
+                            
+                            </h5></a>
+                            <p class="text-start"><span class="badge bg-dark text-light me-3">News</span><?php echo 'Created on: ' . date('F j h:m', strtotime($post->created_at)) ?></p>
+                            <p class="textJustify">
+                                <?php if (strlen($post->body)>150) { $post->body = substr($post->body,0,150)."...";} echo $post->body; ?>
+                                <hr><?php echo strlen($post->body); ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
 </div>
+
+<?php
+    require APPROOT . '/views/includes/footer.php';
+?>

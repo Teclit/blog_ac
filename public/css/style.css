@@ -8,7 +8,7 @@ text-decoration: none;
 }
 
 a:hover { 
-color: #0a58ca;
+color: #2236a7;
 transform: scale(0.95);
 }
 
@@ -36,12 +36,12 @@ transform: scale(0.95);
 
 /* .readArticle img:hover */
 .imgpost {
-    /* transition: all .2s ease-in-out; */
 }
 
 .imgpost:hover { 
     -webkit-filter: grayscale(90%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(90%);
+    filter: grayscale(90%); 
+    
 }
 
 .textJustify {

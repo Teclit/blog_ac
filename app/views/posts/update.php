@@ -1,14 +1,9 @@
 <?php
-   require APPROOT . '/views/includes/head.php';
+    require APPROOT . '/views/includes/header.php';
+    require APPROOT . '/views/includes/navigation.php';
 ?>
 
-<div class="navbar dark">
-    <?php
-       require APPROOT . '/views/includes/navigation.php';
-    ?>
-</div>
-
-<div class="container center">
+<div class="container text-center">
     <h1>
         Update post
     </h1>
@@ -37,3 +32,7 @@
         <button class="btn green" name="submit" type="submit">Submit</button>
     </form>
 </div>
+
+<?php
+    require APPROOT . '/views/includes/footer.php';
+?>
