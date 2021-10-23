@@ -16,7 +16,7 @@ class Users extends Controller {
             'confirmPasswordError' => ''
         ];
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Process form
         // Sanitize POST data
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -60,7 +60,7 @@ class Users extends Controller {
             } elseif(strlen($data['password']) < 6){
                 $data['passwordError'] = 'Password must be at least 8 characters';
             } elseif (preg_match($passwordValidation, $data['password'])) {
-                $data['passwordError'] = 'Password must be have at least one numeric value.';
+                    $data['passwordError'] = 'Password must be have at least one numeric value.';
             }
 
             //Validate confirm password
@@ -122,13 +122,12 @@ class Users extends Controller {
 
             //Check if all errors are empty
             if (empty($data['usernameError']) && empty($data['passwordError'])) {
-                $loggedInUser = $this->userModel->login($data['username'], $data['password']);
+                $loggedInUser = $this->userModel->login($data['username'], $data['password']); //call Methode user
 
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
                     $data['passwordError'] = 'Password or username is incorrect. Please try again.';
-
                     $this->view('users/login', $data);
                 }
             }
@@ -141,6 +140,7 @@ class Users extends Controller {
                 'passwordError' => ''
             ];
         }
+        
         $this->view('users/login', $data);
     }
 
@@ -148,7 +148,7 @@ class Users extends Controller {
         $_SESSION['user_id'] = $user->id;
         $_SESSION['username'] = $user->username;
         $_SESSION['email'] = $user->email;
-        header('location:' . URLROOT . '/index');
+        header('location:' . URLROOT . '/pages/index');
     }
 
     public function logout() {

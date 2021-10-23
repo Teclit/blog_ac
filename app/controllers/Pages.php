@@ -4,14 +4,14 @@ class Pages extends Controller {
         //$this->userModel = $this->model('User');
     }
 
-    // public function index() {
-    //     $data = [
-    //         'title' => 'Home page'
-    //     ];
+    public function index() {
+        $data = [
+            'title' => 'Home page'
+        ];
         
         
-    //     $this->view('index', $data);
-    // }
+        $this->view('index', $data);
+    }
 
     public function about() {
         $data = [
@@ -25,6 +25,13 @@ class Pages extends Controller {
             'title' => 'posts page'
         ];
         $this->view('pages/blogs', $data);
+    } 
+
+    public function dashboard() {
+        $data = [
+            'title' => 'posts page'
+        ];
+        $this->view('pages/dashboard', $data);
     }
 
     public function fullpost() {

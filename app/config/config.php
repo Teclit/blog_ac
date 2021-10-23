@@ -13,3 +13,4 @@
 
     //Sitename
     define('SITENAME', 'ኣክራናት');
+

@@ -4,29 +4,23 @@
 ?>
 
 
-<div class="container text-center">
-    <h1>
-        Create new post
-    </h1>
+<div class="container text-center my-3">
+    <h1>Create new post</h1>
 
-    <form action="<?php echo URLROOT; ?>/posts/create" method="POST">
-        <div class="form-item">
-            <input type="text" name="title" placeholder="Title...">
-
-            <span class="invalidFeedback">
-                <?php echo $data['titleError']; ?>
-            </span>
+    <form action="<?php echo URLROOT; ?>/posts/create" method="POST" class="mx-5 mb-5">
+        <div class="mb-3">
+            <label for="postTitle" class="form-label">Title Post</label>
+            <input type="text" name="title" class="form-control" id="postTitle" placeholder="Title">
+            <span class="invalidFeedback"><?php echo $data['titleError']; ?> </span>
         </div>
+        <div class="mb-3">
+            <label for="bodyTitle" class="form-label">Body Post</label>
+            <textarea class="form-control" name="body" id="bodyTitle" placeholder="Text ..." rows="4"></textarea>
+            <span class="invalidFeedback"><?php echo $data['bodyError']; ?></span>
 
-        <div class="form-item">
-            <textarea name="body" placeholder="Enter your post..."></textarea>
-
-            <span class="invalidFeedback">
-                <?php echo $data['bodyError']; ?>
-            </span>
         </div>
-
-        <button class="btn green" name="submit" type="submit">Submit</button>
+        
+        <button class=" btn btn-success px-5" name="submit" type="submit">Submit</button>
     </form>
 </div>
 

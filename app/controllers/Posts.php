@@ -15,9 +15,9 @@ class Posts extends Controller {
     }
 
     public function create() {
-        if(!isLoggedIn()) {
-            header("Location: " . URLROOT . "/posts");
-        }
+        // if(!isLoggedIn()) {
+        //     header("Location: " . URLROOT . "/posts");
+        // }
 
         $data = [
             'title' => '',

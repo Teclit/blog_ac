@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title> <?php echo SITENAME;?> </title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="<?php echo URLROOT;?>/public/img/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="<?php echo URLROOT;?>/public/img/brand.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="<?php echo URLROOT;?>/public/css/bootstrap.css" rel="stylesheet" />
         <link href="<?php echo URLROOT;?>/public/css/style.css" rel="stylesheet" />

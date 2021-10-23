@@ -26,11 +26,8 @@ class User {
 
         //Bind value
         $this->db->bind(':username', $username);
-
         $row = $this->db->single();
-
         $hashedPassword = $row->password;
-
         if (password_verify($password, $hashedPassword)) {
             return $row;
         } else {
