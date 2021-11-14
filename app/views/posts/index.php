@@ -11,7 +11,7 @@
             
     <section class="container my-4">
         <div class="row g-0">
-            <p class="fs-2 fw-bold"> <span class="fs-1 me-2" >|</span>ነገራት<hr></p>
+            <p class="fs-2 fw-bold"> <span class="fs-1 me-1" >|</span>ነገራት<hr></p>
         </div>
         <div class="row">
             <?php foreach($data['posts'] as $post): ?>
