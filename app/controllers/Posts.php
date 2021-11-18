@@ -23,8 +23,8 @@ class Posts extends Controller {
             'postTitle ' => '',
             'body' => '',
             'postTitle Error' => '',
-            'bodyError' => '',
-            'imageError' => ''
+            'postBodyError' => '',
+            'postImageError' => ''
         ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -33,28 +33,28 @@ class Posts extends Controller {
             $data = [
                 'userID' => $_SESSION['userID'],
                 'postTitle '   => trim($_POST['postTitle ']),
-                'body'    => trim($_POST['body']),
-                'image'   => trim($_FILES["postImage"]["name"]),
+                'postBody'    => trim($_POST['body']),
+                'postImage'   => trim($_FILES["postImage"]["name"]),
                 'target'  => trim($_FILES['postImage']['name']), //URLROOT."/public/uploads/".basename
 
                 'postTitle Error' => '',
-                'bodyError' => '',
-                'imageError' => ''
+                'postBodyError' => '',
+                'postImageError' => ''
             ];
 
             if(empty($data['postTitle '])) {
                 $data['postTitle Error'] = 'The postTitle  of a post cannot be empty';
             }
 
-            if(empty($data['body'])) {
-                $data['bodyError'] = 'The body of a post cannot be empty';
+            if(empty($data['postBody'])) {
+                $data['postBodyError'] = 'The body of a post cannot be empty';
             }
 
-            if(empty($data['body'])) {
-                $data['imageError'] = 'The image of a post cannot be empty';
+            if(empty($data['postBody'])) {
+                $data['postImageError'] = 'The image of a post cannot be empty';
             }
 
-            if (empty($data['postTitle Error']) && empty($data['bodyError']) && empty($data['imageError'])) {
+            if (empty($data['postTitle Error']) && empty($data['postBodyError']) && empty($data['postImageError'])) {
                 
                 // if(move_uploaded_file($_FILES["postImage"]["tmp_name"], $data['target'])) {
                 //     echo "image uploaded !!! ";
@@ -91,8 +91,8 @@ class Posts extends Controller {
             'postTitle ' => '',
             'body' => '',
             'postTitle Error' => '',
-            'bodyError' => '',
-            'imageError' => ''
+            'postBodyError' => '',
+            'postImageError' => ''
         ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -105,27 +105,27 @@ class Posts extends Controller {
                 'postTitle ' => trim($_POST['postTitle ']),
                 'body' => trim($_POST['body']),
                 'postTitle Error' => '',
-                'bodyError' => '',
-                'imageError' => ''
+                'postBodyError' => '',
+                'postImageError' => ''
             ];
 
             if(empty($data['postTitle '])) {
                 $data['postTitle Error'] = 'The postTitle  of a post cannot be empty';
             }
 
-            if(empty($data['body'])) {
-                $data['bodyError'] = 'The body of a post cannot be empty';
+            if(empty($data['postBody'])) {
+                $data['postBodyError'] = 'The body of a post cannot be empty';
             }
 
             if($data['postTitle '] == $this->postModel->findPostById($id)->postTitle ) {
                 $data['postTitle Error'] == 'At least change the postTitle !';
             }
 
-            if($data['body'] == $this->postModel->findPostById($id)->body) {
-                $data['bodyError'] == 'At least change the body!';
+            if($data['postBody'] == $this->postModel->findPostById($id)->body) {
+                $data['postBodyError'] == 'At least change the body!';
             }
 
-            if (empty($data['postTitle Error']) && empty($data['bodyError'])) {
+            if (empty($data['postTitle Error']) && empty($data['postBodyError'])) {
                 if ($this->postModel->updatePost($data)) {
                     header("Location: " . URLROOT . "/posts");
                 } else {
@@ -154,7 +154,7 @@ class Posts extends Controller {
             'postTitle ' => '',
             'body' => '',
             'postTitle Error' => '',
-            'bodyError' => ''
+            'postBodyError' => ''
         ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {

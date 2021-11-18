@@ -38,7 +38,7 @@ CREATE TABLE users(
         userTel Varchar (55) NOT NULL ,
         userEmail     Varchar (65) NOT NULL ,
         userName  Varchar (255) NOT NULL ,
-        password  Varchar (255) NOT NULL ,
+        userPassword  Varchar (255) NOT NULL ,
         roleID    Int NOT NULL
 	,CONSTRAINT users_PK PRIMARY KEY (userID)
 
