@@ -92,7 +92,7 @@ class Users extends Controller {
 
     public function login() {
         $data = [
-            'title' => 'Login page',
+            'postTitle ' => 'Login page',
             'username' => '',
             'password' => '',
             'usernameError' => '',
@@ -145,14 +145,14 @@ class Users extends Controller {
     }
 
     public function createUserSession($user) {
-        $_SESSION['user_id'] = $user->id;
+        $_SESSION['userID'] = $user->id;
         $_SESSION['username'] = $user->username;
         $_SESSION['email'] = $user->email;
         header('location:' . URLROOT . '/pages/index');
     }
 
     public function logout() {
-        unset($_SESSION['user_id']);
+        unset($_SESSION['userID']);
         unset($_SESSION['username']);
         unset($_SESSION['email']);
         header('location:' . URLROOT . '/users/login');

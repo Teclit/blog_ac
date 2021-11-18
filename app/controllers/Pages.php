@@ -6,7 +6,7 @@ class Pages extends Controller {
 
     public function index() {
         $data = [
-            'title' => 'Home page'
+            'postTitle ' => 'Home page'
         ];
         
         
@@ -15,28 +15,28 @@ class Pages extends Controller {
 
     public function about() {
         $data = [
-            'title' => 'about page'
+            'postTitle ' => 'about page'
         ];
         $this->view('pages/about', $data);
     }
 
     public function posts() {
         $data = [
-            'title' => 'posts page'
+            'postTitle ' => 'posts page'
         ];
         $this->view('pages/blogs', $data);
     } 
 
     public function dashboard() {
         $data = [
-            'title' => 'posts page'
+            'postTitle ' => 'posts page'
         ];
         $this->view('pages/dashboard', $data);
     }
 
     public function fullpost() {
         $data = [
-            'title' => 'fullpost page'
+            'postTitle ' => 'fullpost page'
         ];
         $this->view('pages/fullpost', $data);
     }

@@ -20,37 +20,54 @@ class Posts extends Controller {
         // }
 
         $data = [
-            'title' => '',
+            'postTitle ' => '',
             'body' => '',
-            'titleError' => '',
-            'bodyError' => ''
+            'postTitle Error' => '',
+            'bodyError' => '',
+            'imageError' => ''
         ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'user_id' => $_SESSION['user_id'],
-                'title' => trim($_POST['title']),
-                'body' => trim($_POST['body']),
-                'titleError' => '',
-                'bodyError' => ''
+                'userID' => $_SESSION['userID'],
+                'postTitle '   => trim($_POST['postTitle ']),
+                'body'    => trim($_POST['body']),
+                'image'   => trim($_FILES["postImage"]["name"]),
+                'target'  => trim($_FILES['postImage']['name']), //URLROOT."/public/uploads/".basename
+
+                'postTitle Error' => '',
+                'bodyError' => '',
+                'imageError' => ''
             ];
 
-            if(empty($data['title'])) {
-                $data['titleError'] = 'The title of a post cannot be empty';
+            if(empty($data['postTitle '])) {
+                $data['postTitle Error'] = 'The postTitle  of a post cannot be empty';
             }
 
             if(empty($data['body'])) {
                 $data['bodyError'] = 'The body of a post cannot be empty';
             }
 
-            if (empty($data['titleError']) && empty($data['bodyError'])) {
-                if ($this->postModel->addPost($data)) {
-                    header("Location: " . URLROOT . "/posts");
-                } else {
-                    die("Something went wrong, please try again!");
-                }
+            if(empty($data['body'])) {
+                $data['imageError'] = 'The image of a post cannot be empty';
+            }
+
+            if (empty($data['postTitle Error']) && empty($data['bodyError']) && empty($data['imageError'])) {
+                
+                // if(move_uploaded_file($_FILES["postImage"]["tmp_name"], $data['target'])) {
+                //     echo "image uploaded !!! ";
+                    if ($this->postModel->addPost($data)) {
+                        header("Location: " . URLROOT . "/posts");
+                    } else {
+                        die("Something went wrong, please try again!");
+                    }
+                    
+                // }else{
+                //     echo "image does not upload!";
+                // }
+
             } else {
                 $this->view('posts/create', $data);
             }
@@ -65,16 +82,17 @@ class Posts extends Controller {
 
         if(!isLoggedIn()) {
             header("Location: " . URLROOT . "/posts");
-        } elseif($post->user_id != $_SESSION['user_id']){
+        } elseif($post->userID != $_SESSION['userID']){
             header("Location: " . URLROOT . "/posts");
         }
 
         $data = [
             'post' => $post,
-            'title' => '',
+            'postTitle ' => '',
             'body' => '',
-            'titleError' => '',
-            'bodyError' => ''
+            'postTitle Error' => '',
+            'bodyError' => '',
+            'imageError' => ''
         ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -83,30 +101,31 @@ class Posts extends Controller {
             $data = [
                 'id' => $id,
                 'post' => $post,
-                'user_id' => $_SESSION['user_id'],
-                'title' => trim($_POST['title']),
+                'userID' => $_SESSION['userID'],
+                'postTitle ' => trim($_POST['postTitle ']),
                 'body' => trim($_POST['body']),
-                'titleError' => '',
-                'bodyError' => ''
+                'postTitle Error' => '',
+                'bodyError' => '',
+                'imageError' => ''
             ];
 
-            if(empty($data['title'])) {
-                $data['titleError'] = 'The title of a post cannot be empty';
+            if(empty($data['postTitle '])) {
+                $data['postTitle Error'] = 'The postTitle  of a post cannot be empty';
             }
 
             if(empty($data['body'])) {
                 $data['bodyError'] = 'The body of a post cannot be empty';
             }
 
-            if($data['title'] == $this->postModel->findPostById($id)->title) {
-                $data['titleError'] == 'At least change the title!';
+            if($data['postTitle '] == $this->postModel->findPostById($id)->postTitle ) {
+                $data['postTitle Error'] == 'At least change the postTitle !';
             }
 
             if($data['body'] == $this->postModel->findPostById($id)->body) {
                 $data['bodyError'] == 'At least change the body!';
             }
 
-            if (empty($data['titleError']) && empty($data['bodyError'])) {
+            if (empty($data['postTitle Error']) && empty($data['bodyError'])) {
                 if ($this->postModel->updatePost($data)) {
                     header("Location: " . URLROOT . "/posts");
                 } else {
@@ -126,15 +145,15 @@ class Posts extends Controller {
 
         if(!isLoggedIn()) {
             header("Location: " . URLROOT . "/posts");
-        } elseif($post->user_id != $_SESSION['user_id']){
+        } elseif($post->userID != $_SESSION['userID']){
             header("Location: " . URLROOT . "/posts");
         }
 
         $data = [
             'post' => $post,
-            'title' => '',
+            'postTitle ' => '',
             'body' => '',
-            'titleError' => '',
+            'postTitle Error' => '',
             'bodyError' => ''
         ];
 

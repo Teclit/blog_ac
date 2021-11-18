@@ -10,6 +10,7 @@
 
     //URLROOT (Dynamic links)
     define('URLROOT', 'http://localhost/Projects___/acranatblog');
+    define('URLDOCS', '/Projects___/acranatblog/public/uploads/');
 
     //Sitename
     define('SITENAME', 'ኣክራናት');

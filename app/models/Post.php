@@ -7,7 +7,7 @@ class Post {
     }
 
     public function findAllPosts() {
-        $this->db->query('SELECT * FROM posts ORDER BY created_at ASC');
+        $this->db->query('SELECT * FROM posts ORDER BY postCreated_at DESC');
 
         $results = $this->db->resultSet();
 
@@ -15,23 +15,34 @@ class Post {
     }
 
     public function addPost($data) {
-        $this->db->query('INSERT INTO posts (author, title, body) VALUES (:user_id, :title, :body)');
+        $this->db->query('INSERT INTO posts (userID  , postTitle , postBody, postImage) VALUES (:userID, :postTitle , :postBody, :postImage)');
 
-        $this->db->bind(':user_id', $data['user_id']);
-        $this->db->bind(':title', $data['title']);
-        $this->db->bind(':body', $data['body']);
+        $this->db->bind(':userID', $data['userID']);
+        $this->db->bind(':postTitle ', $data['postTitle ']);
+        $this->db->bind(':postBody', $data['postBody']);
+        $this->db->bind(':postImage', $data['postImage']);
+        //$image =$data['image']; 
+        
+        if(move_uploaded_file($_FILES['postImage']["tmp_name"], $_SERVER["DOCUMENT_ROOT"].URLDOCS.$data['target'])) {
+            if ($this->db->execute()) {
+                return true;
+            } else {
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+                return false;
+            }
+
+        }else{
+            echo $_SERVER["DOCUMENT_ROOT"] ."<br>";
+            echo "images does not upload!";
+        };
+
+        
     }
 
-    public function findPostById($id) {
-        $this->db->query('SELECT * FROM posts WHERE id = :id');
+    public function findPostById($postID) {
+        $this->db->query('SELECT * FROM posts WHERE postID = :postID');
 
-        $this->db->bind(':id', $id);
+        $this->db->bind(':postID', $postID);
 
         $row = $this->db->single();
 
@@ -39,11 +50,11 @@ class Post {
     }
 
     public function updatePost($data) {
-        $this->db->query('UPDATE posts SET title = :title, body = :body WHERE id = :id');
+        $this->db->query('UPDATE posts SET postTitle  = :postTitle , postBody = :postBody WHERE postID = :postID');
 
-        $this->db->bind(':id', $data['id']);
-        $this->db->bind(':title', $data['title']);
-        $this->db->bind(':body', $data['body']);
+        $this->db->bind(':postID', $data['postID']);
+        $this->db->bind(':postTitle ', $data['postTitle ']);
+        $this->db->bind(':postBody', $data['postBody']);
 
         if ($this->db->execute()) {
             return true;
@@ -52,10 +63,10 @@ class Post {
         }
     }
 
-    public function deletePost($id) {
-        $this->db->query('DELETE FROM posts WHERE id = :id');
+    public function deletePost($postID) {
+        $this->db->query('DELETE FROM posts WHERE postID = :postID');
 
-        $this->db->bind(':id', $id);
+        $this->db->bind(':postID', $postID);
 
         if ($this->db->execute()) {
             return true;
