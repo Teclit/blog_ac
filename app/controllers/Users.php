@@ -92,9 +92,9 @@ class Users extends Controller {
 
     public function login() {
         $data = [
-            'postTitle ' => 'Login page',
-            'username' => '',
-            'password' => '',
+            
+            'userName' => '',
+            'userPassword' => '',
             'usernameError' => '',
             'passwordError' => ''
         ];
@@ -105,8 +105,8 @@ class Users extends Controller {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'username' => trim($_POST['username']),
-                'password' => trim($_POST['password']),
+                'username' => trim($_POST['userName']),
+                'password' => trim($_POST['userPassword']),
                 'usernameError' => '',
                 'passwordError' => '',
             ];

@@ -10,7 +10,7 @@
     <form action="<?php echo URLROOT; ?>/posts/create" method="POST" enctype="multipart/form-data" class="mx-5 mb-5" >
         <div class="mb-1">
             <label for="postTitle" class="form-label">Title Post</label>
-            <input type="text" name="title" class="form-control" id="postTitle" placeholder="Title">
+            <input type="text" name="postTitle" class="form-control" id="postTitle" placeholder="Title">
             <span class="invalidFeedback"><?php echo $data['postTitleError']; ?> </span>
         </div>
         
@@ -36,8 +36,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="PostBody" class="form-label">Body Post</label>
-            <textarea class="form-control" name="body" id="PostBody" placeholder="Text ..." rows="4"></textarea>
+            <label for="postBody" class="form-label">Body Post</label>
+            <textarea class="form-control" name="postBody" id="postBody" placeholder="Text ..." rows="4"></textarea>
             <span class="invalidFeedback"><?php echo $data['postBodyError']; ?></span>
 
         </div>

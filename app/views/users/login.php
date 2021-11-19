@@ -11,11 +11,11 @@
                         <h4 class="card-title text-center mb-5 fw-light fs-5">ናብ ዝርዝር ሕሳብኩም ክታትዉ ኣብዚ ታትቲ ዘሎ ቕጥዒ ኣማልኡ</h4>
                         <form action="<?php echo URLROOT; ?>/users/login" method ="POST">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                <input type="text" class="form-control" name="userName" id="username" placeholder="Username">
                                 <label for="username">ስም ተጠቃሚ</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                <input type="password" class="form-control" name="userPassword" id="password" placeholder="Password">
                                 <label for="password">ቃለ-ምስጢር</label>
                             </div>
 

@@ -15,21 +15,24 @@ class Post {
     }
 
     public function addPost($data) {
-        $this->db->query('INSERT INTO posts (userID  , postTitle , postBody, postImage) VALUES (:userID, :postTitle , :postBody, :postImage)');
+        $this->db->query('INSERT INTO posts (postTitle , postBody, postImage) VALUES ( :postTitle , :postBody, :postImage)');
 
-        $this->db->bind(':userID', $data['userID']);
-        $this->db->bind(':postTitle ', $data['postTitle ']);
-        $this->db->bind(':postBody', $data['postBody']);
-        $this->db->bind(':postImage', $data['postImage']);
-        //$image =$data['image']; 
+        // $this->db->bind(':userID', $data['userID']);
+        $this->db->bind(':postTitle ', $data['postTitle']);
+        $this->db->bind(':postBody',   $data['postBody']);
+        $this->db->bind(':postImage',  $data['postImage']);
+
         
-        if(move_uploaded_file($_FILES['postImage']["tmp_name"], $_SERVER["DOCUMENT_ROOT"].URLDOCS.$data['target'])) {
-            if ($this->db->execute()) {
-                return true;
-            } else {
-
-                return false;
-            }
+        
+        if(move_uploaded_file($_FILES['postImage']["tmp_name"], $_SERVER["DOCUMENT_ROOT"].URLDOCS.$data['postImage'])) {
+            echo "post does not upload! <br><hr>";
+                print_r($data);
+            // if ($this->db->execute()) {
+                
+            //     return true;
+            // } else {
+            //     return false;
+            // }
 
         }else{
             echo $_SERVER["DOCUMENT_ROOT"] ."<br>";

@@ -20,10 +20,11 @@ class Posts extends Controller {
         // }
 
         $data = [
-            'postTitle ' => '',
+            'postTitle' => '',
             'body' => '',
-            'postTitle Error' => '',
+            'postTitleError' => '',
             'postBodyError' => '',
+            'postTagError' => '',
             'postImageError' => ''
         ];
 
@@ -31,19 +32,23 @@ class Posts extends Controller {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'userID' => $_SESSION['userID'],
-                'postTitle '   => trim($_POST['postTitle ']),
-                'postBody'    => trim($_POST['body']),
-                'postImage'   => trim($_FILES["postImage"]["name"]),
-                'target'  => trim($_FILES['postImage']['name']), //URLROOT."/public/uploads/".basename
+                // 'userID'       => $_SESSION['userID'],
+                'postTitle'   => trim($_POST['postTitle']),
+                'postBody'     => trim($_POST['postBody']),
+                // 'postCategory' => trim($_POST['postCategory']),
+                // 'postTag'      => trim($_POST['postTag']),
+                'postImage'    => trim($_FILES["postImage"]["name"]),
+                //'target'       => trim($_FILES['postImage']['name']), //URLROOT."/public/uploads/".basename
 
-                'postTitle Error' => '',
+                'postTitleError' => '',
                 'postBodyError' => '',
+                'postCategory' => '',
+                'postTag' => '',
                 'postImageError' => ''
             ];
 
-            if(empty($data['postTitle '])) {
-                $data['postTitle Error'] = 'The postTitle  of a post cannot be empty';
+            if(empty($data['postTitle'])) {
+                $data['postTitleError'] = 'The postTitle  of a post cannot be empty';
             }
 
             if(empty($data['postBody'])) {
@@ -54,20 +59,13 @@ class Posts extends Controller {
                 $data['postImageError'] = 'The image of a post cannot be empty';
             }
 
-            if (empty($data['postTitle Error']) && empty($data['postBodyError']) && empty($data['postImageError'])) {
-                
-                // if(move_uploaded_file($_FILES["postImage"]["tmp_name"], $data['target'])) {
-                //     echo "image uploaded !!! ";
+            if (empty($data['postTitleError']) && empty($data['postBodyError']) && empty($data['postImageError'])) {
                     if ($this->postModel->addPost($data)) {
                         header("Location: " . URLROOT . "/posts");
                     } else {
                         die("Something went wrong, please try again!");
                     }
-                    
-                // }else{
-                //     echo "image does not upload!";
-                // }
-
+                
             } else {
                 $this->view('posts/create', $data);
             }
@@ -109,23 +107,23 @@ class Posts extends Controller {
                 'postImageError' => ''
             ];
 
-            if(empty($data['postTitle '])) {
-                $data['postTitle Error'] = 'The postTitle  of a post cannot be empty';
+            if(empty($data['postTitle'])) {
+                $data['postTitleError'] = 'The postTitle  of a post cannot be empty';
             }
 
             if(empty($data['postBody'])) {
                 $data['postBodyError'] = 'The body of a post cannot be empty';
             }
 
-            if($data['postTitle '] == $this->postModel->findPostById($id)->postTitle ) {
-                $data['postTitle Error'] == 'At least change the postTitle !';
+            if($data['postTitle'] == $this->postModel->findPostById($id)->postTitle ) {
+                $data['postTitleError'] == 'At least change the postTitle !';
             }
 
             if($data['postBody'] == $this->postModel->findPostById($id)->body) {
                 $data['postBodyError'] == 'At least change the body!';
             }
 
-            if (empty($data['postTitle Error']) && empty($data['postBodyError'])) {
+            if (empty($data['postTitleError']) && empty($data['postBodyError'])) {
                 if ($this->postModel->updatePost($data)) {
                     header("Location: " . URLROOT . "/posts");
                 } else {

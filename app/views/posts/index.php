@@ -16,18 +16,18 @@
         <div class="row">
             <?php foreach($data['posts'] as $post): ?>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="thumbnail text-center">
+                    <div class="card text-center p-2">
                         <a  href="<?php echo URLROOT; ?>/pages/fullpost" class="readArticle" target="_blank">
-                            <img src="<?php echo URLROOT;?>/public/img/img-1.jpg" alt="" class=" img-fluid imgpost">
+                            <img src="<?php echo URLROOT;?>/public/uploads/<?php echo $post->postImage; ?>" alt="Images post" class="img-fluid imgpost">
                         </a>
                         <div class="pt-2">
                             <a href="<?php echo URLROOT; ?>/pages/fullpost" target="_blank"><h5 class="fw-bold textJustify">
-                                <?php echo $post->title; ?> 
+                                <?php echo $post->postTitle; ?> 
                             
                             </h5></a>
-                            <p class="text-start"><span class="badge bg-dark text-light me-3">News</span><?php echo date('F j, Y, g:i a', strtotime($post->created_at)) ?></p>
+                            <p class="text-start"><span class="badge bg-dark text-light me-3">News</span><?php echo date('F j, Y, g:i a', strtotime($post->postCreated_at)) ?></p>
                             <p class="textJustify">
-                                <?php if (strlen($post->body)>150) { $post->body = substr($post->body,0,150)."...";} echo $post->body; ?>
+                                <?php if (strlen($post->postBody)>150) { $post->postBody = substr($post->postBody,0,150)."...";} echo $post->postBody; ?>
                             </p>
                         </div>
 *                    </div>
