@@ -21,7 +21,7 @@ transform: scale(0.95);
     position: relative;
 }
 
-.posttitle {
+.postHeader {
     color: white;
     text-align: justify;
     position: absolute;
@@ -30,12 +30,23 @@ transform: scale(0.95);
     width:100%
 }
 
-.headertitle:hover{
+.headerTitle:hover{
     transform: scale(0.9);
 }
 
 /* .readArticle img:hover */
+.imgPostCol {
+    display: block;
+    width: 100vw;
+    height: 30vh;
+    object-fit: cover;
+}
 .imgpost {
+    /* height: 160px;
+    width: 100%; 
+    object-fit: none; */
+    /*  */
+
 }
 
 .imgpost:hover { 

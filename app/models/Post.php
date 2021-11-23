@@ -17,26 +17,34 @@ class Post {
     public function addPost($data) {
         $this->db->query('INSERT INTO posts (postTitle , postBody, postImage) VALUES ( :postTitle , :postBody, :postImage)');
 
-        // $this->db->bind(':userID', $data['userID']);
-        $this->db->bind(':postTitle ', $data['postTitle']);
+        //$this->db->bind(':userID', $data['userID']);
+        $this->db->bind(':postTitle', $data['postTitle']);
         $this->db->bind(':postBody',   $data['postBody']);
         $this->db->bind(':postImage',  $data['postImage']);
 
+        // Image Resize
+        $imageName= $data['postImage'];
+        $tmpName=  $_FILES['postImage']['tmp_name'];
+        $directoryName = $_SERVER["DOCUMENT_ROOT"].URLDOCS;     //folder where image will upload
+        $fileName=$_SERVER["DOCUMENT_ROOT"].URLDOCS.$imageName; //$directoryName.$imageName;
         
         
-        if(move_uploaded_file($_FILES['postImage']["tmp_name"], $_SERVER["DOCUMENT_ROOT"].URLDOCS.$data['postImage'])) {
-            echo "post does not upload! <br><hr>";
-                print_r($data);
-            // if ($this->db->execute()) {
-                
-            //     return true;
-            // } else {
-            //     return false;
-            // }
+        if(move_uploaded_file($tmpName, $fileName )) {
+            
+            try {
+                if ($this->db->execute()) {
+                        return true;
+                }
+            }
+            catch (PDOException $e){
+                //display error  message
+                echo $e;
+                return false;
+            }
 
         }else{
             echo $_SERVER["DOCUMENT_ROOT"] ."<br>";
-            echo "images does not upload!";
+            // echo "images does not upload!";
         };
 
         
@@ -77,4 +85,6 @@ class Post {
             return false;
         }
     }
+
+
 }

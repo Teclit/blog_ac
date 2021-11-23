@@ -5,9 +5,11 @@
                 <a href="<?php echo URLROOT; ?>/pages/fullpost" class="readArticle" target="_blank">
                     <div class="thumbnail text-center">
                         <img src="<?php echo URLROOT;?>/public/img/img-5.jpg" alt="" class=" img-fluid imgpost">
-                        <div class="posttitle pt-2">
-                            <h6 class="px-3 headertitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
-                            <p class="px-3"><span class="badge bg-light text-dark me-3">World</span>24/01/2021</p>
+                        <div class="postHeader pt-2 ">
+                            <h6 class="px-3 headerTitle ">
+                                ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ <br>
+                                <span class="badge px-3 bg-light text-dark me-3 pt-1">World</span>24-01-2021</p>
+                            </h6>
                         </div>
                     </div>
                 </a>
@@ -18,8 +20,8 @@
                         <a href="<?php echo URLROOT; ?>/pages/fullpost" class="readArticle" target="_blank">
                             <div class="thumbnail text-center">
                                 <img src="<?php echo URLROOT;?>/public/img/img-4.jpg" alt="" class=" img-fluid imgpost">
-                                <div class="posttitle pt-2">
-                                    <h6 class="px-3 headertitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
+                                <div class="postHeader pt-2">
+                                    <h6 class="px-3 headerTitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
                                     <p class="px-3"><span class="badge bg-light text-dark me-3">News</span>24/01/2021</p>
                                 </div>
                             </div>
@@ -30,8 +32,8 @@
                         <a href="<?php echo URLROOT; ?>/pages/fullpost" class="readArticle" target="_blank">
                             <div class="thumbnail text-center">
                                 <img src="<?php echo URLROOT;?>/public/img/img-8.jpg" alt="" class=" img-fluid imgpost">
-                                <div class="posttitle">
-                                    <h6 class="px-3 headertitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
+                                <div class="postHeader">
+                                    <h6 class="px-3 headerTitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
                                     <p class="px-3"><span class="badge bg-light text-dark me-3">Editorial</span>24/01/2021</p>
                                 </div>
                             </div>
@@ -45,12 +47,12 @@
 
 <section class="container my-4">
     <div class="row g-0">
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 ">
             <a href="<?php echo URLROOT; ?>/pages/fullpost" class="readArticle" target="_blank">
                 <div class="thumbnail text-center">
                     <img src="<?php echo URLROOT;?>/public/img/img-3.jpg" alt="" class=" img-fluid imgpost">
-                    <div class="posttitle pt-2 px-2">
-                        <h6 class="px-3 headertitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
+                    <div class="postHeader pt-2 px-2">
+                        <h6 class="px-3 headerTitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
                         <p class="px-3" ><span class="badge bg-light text-dark me-3">News</span>24/01/2021</p>
                     </div>
                 </div>
@@ -61,8 +63,8 @@
             <a href="<?php echo URLROOT; ?>/pages/fullpost" class="readArticle" target="_blank">
                 <div class="thumbnail text-center">
                     <img src="<?php echo URLROOT;?>/public/img/img-2.jpg" alt="" class=" img-fluid imgpost">
-                    <div class="posttitle pt-2">
-                        <h6 class="px-3 headertitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
+                    <div class="postHeader pt-2">
+                        <h6 class="px-3 headerTitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
                         <p class="px-3"><span class="badge bg-light text-dark me-3">News</span>24/01/2021</p>
                     </div>
                 </div>
@@ -72,8 +74,8 @@
             <a href="<?php echo URLROOT; ?>/pages/fullpost" class="readArticle" target="_blank">
                 <div class="thumbnail text-center">
                     <img src="<?php echo URLROOT;?>/public/img/img-5.jpg" alt="" class=" img-fluid imgpost">
-                    <div class="posttitle pt-2">
-                        <h6 class="px-3 headertitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
+                    <div class="postHeader pt-2">
+                        <h6 class="px-3 headerTitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
                         <p class="px-3"><span class="badge bg-light text-dark me-3">News</span>24/01/2021</p>
                     </div>
                 </div>
@@ -83,8 +85,8 @@
             <a href="<?php echo URLROOT; ?>/pages/fullpost" class="readArticle" target="_blank">
                 <div class="thumbnail text-center">
                     <img src="<?php echo URLROOT;?>/public/img/img-8.jpg" alt="" class=" img-fluid imgpost">
-                    <div class="posttitle pt-2">
-                    <h6 class="px-3 headertitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
+                    <div class="postHeader pt-2">
+                    <h6 class="px-3 headerTitle">ነገራት ማለት ኣብ መግቢ፡ መጽለሊንክዳንን ይምርኰስ። ደቂ-ሰብ፡ </h6>
                         <p class="px-3"><span class="badge bg-light text-dark me-3">News</span>24/01/2021</p>
                     </div>
                 </div>

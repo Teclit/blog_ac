@@ -60,7 +60,8 @@ class Posts extends Controller {
             }
 
             if (empty($data['postTitleError']) && empty($data['postBodyError']) && empty($data['postImageError'])) {
-                    if ($this->postModel->addPost($data)) {
+                    
+                if ($this->postModel->addPost($data)) {
                         header("Location: " . URLROOT . "/posts");
                     } else {
                         die("Something went wrong, please try again!");
