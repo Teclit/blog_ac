@@ -8,7 +8,7 @@
 #------------------------------------------------------------
 
 CREATE TABLE roleuser(
-        roleID    Int NOT NULL ,
+        roleID    Int NOT NULL AUTO_INCREMENT,
         roleName  Varchar (255) NOT NULL ,
         roleCode  Varchar (255) NOT NULL
 	,CONSTRAINT roleuser_PK PRIMARY KEY (roleID)
@@ -20,7 +20,7 @@ CREATE TABLE roleuser(
 #------------------------------------------------------------
 
 CREATE TABLE category(
-        categoryID      Int NOT NULL ,
+        categoryID      Int NOT NULL AUTO_INCREMENT,
         categoryName    Varchar (11) NOT NULL ,
         categoryCreated Date NOT NULL
 	,CONSTRAINT category_PK PRIMARY KEY (categoryID)
@@ -32,7 +32,7 @@ CREATE TABLE category(
 #------------------------------------------------------------
 
 CREATE TABLE users(
-        userID    Int NOT NULL ,
+        userID    Int NOT NULL AUTO_INCREMENT,
         firstName Varchar (255) NOT NULL ,
         lastName  Varchar (255) NOT NULL ,
         userTel Varchar (55) NOT NULL ,
@@ -51,7 +51,7 @@ CREATE TABLE users(
 #------------------------------------------------------------
 
 CREATE TABLE posts(
-        postID     Int NOT NULL ,
+        postID     Int NOT NULL AUTO_INCREMENT,
         postTitle       Varchar (255) NOT NULL ,
         postImage  Varchar (255) NOT NULL ,
         postBody   Varchar (255) NOT NULL ,

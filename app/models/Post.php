@@ -8,24 +8,24 @@ class Post {
 
     public function findAllPosts() {
         $this->db->query('SELECT * FROM posts ORDER BY postCreated_at DESC');
-
         $results = $this->db->resultSet();
-
         return $results;
     }
 
     public function addPost($data) {
-        $this->db->query('INSERT INTO posts (postTitle , postBody, postImage) VALUES ( :postTitle , :postBody, :postImage)');
+        $this->db->query('INSERT INTO posts (postTitle , postBody, postImage, userID, categoryID)
+                        VALUES ( :postTitle , :postBody, :postImage, :userID, :categoryID)');
 
-        //$this->db->bind(':userID', $data['userID']);
+        
         $this->db->bind(':postTitle', $data['postTitle']);
-        $this->db->bind(':postBody',   $data['postBody']);
-        $this->db->bind(':postImage',  $data['postImage']);
+        $this->db->bind(':postBody',  $data['postBody']);
+        $this->db->bind(':postImage', $data['postImage']);
+        $this->db->bind(':userID',    $data['userID']);
+        $this->db->bind(':categoryID',$data['userID']);
 
         // Image Resize
         $imageName= $data['postImage'];
         $tmpName=  $_FILES['postImage']['tmp_name'];
-        $directoryName = $_SERVER["DOCUMENT_ROOT"].URLDOCS;     //folder where image will upload
         $fileName=$_SERVER["DOCUMENT_ROOT"].URLDOCS.$imageName; //$directoryName.$imageName;
         
         
@@ -84,6 +84,12 @@ class Post {
         } else {
             return false;
         }
+    }
+
+    public function findAllCategory() {
+        $this->db->query('SELECT * FROM category ORDER BY categoryName ASC');
+        $results = $this->db->resultSet();
+        return $results;
     }
 
 

@@ -22,10 +22,12 @@
         </div>
         
         <div class="mb-1">
-            <label for="postCategory" class="form-label">Category Post</label>
-            <input type="text" name="postCategory" class="form-control" id="postCategory" placeholder="Category Post">
-            <span class="invalidFeedback"><?php echo $data['postBodyError']; ?></span>
-
+            <label for="postCategory" class="form-label"><span class="FieldInfo"> Choose Categroy </span></label>
+                <select class="form-control" id="postCategory"  name="postCategory">
+                    <?php foreach ($data['category'] as $category) { ?>
+                        <option value=<?php echo $category->categoryID ; ?>> <?php echo $category->categoryName ; ?></option>
+                    <?php } ;?>
+                </select>
         </div>
         
         <div class="mb-1">

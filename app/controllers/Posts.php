@@ -15,11 +15,11 @@ class Posts extends Controller {
     }
 
     public function create() {
-        // if(!isLoggedIn()) {
-        //     header("Location: " . URLROOT . "/posts");
-        // }
+
+        $category = $this->postModel->findAllCategory();
 
         $data = [
+            'category' => $category,
             'postTitle' => '',
             'body' => '',
             'postTitleError' => '',
@@ -27,23 +27,22 @@ class Posts extends Controller {
             'postTagError' => '',
             'postImageError' => ''
         ];
-
+        
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                // 'userID'       => $_SESSION['userID'],
-                'postTitle'   => trim($_POST['postTitle']),
+                'userID'       =>  1,//$_SESSION['userID'],
+                'postTitle'    => trim($_POST['postTitle']),
                 'postBody'     => trim($_POST['postBody']),
-                // 'postCategory' => trim($_POST['postCategory']),
-                // 'postTag'      => trim($_POST['postTag']),
+                'postCategory' => trim($_POST['postCategory']),
+                'postTag'      => trim($_POST['postTag']),
                 'postImage'    => trim($_FILES["postImage"]["name"]),
-                //'target'       => trim($_FILES['postImage']['name']), //URLROOT."/public/uploads/".basename
-
+                
                 'postTitleError' => '',
                 'postBodyError' => '',
                 'postCategory' => '',
-                'postTag' => '',
+                'postTagError' => '',
                 'postImageError' => ''
             ];
 
@@ -55,11 +54,17 @@ class Posts extends Controller {
                 $data['postBodyError'] = 'The body of a post cannot be empty';
             }
 
-            if(empty($data['postBody'])) {
+            if(empty($data['postImage'])) {
                 $data['postImageError'] = 'The image of a post cannot be empty';
             }
 
-            if (empty($data['postTitleError']) && empty($data['postBodyError']) && empty($data['postImageError'])) {
+            if(empty($data['postTag'])) {
+                $data['postImageError'] = 'The Tag of a post must be  a Character';
+            } 
+            
+
+            if (empty($data['postTitleError']) && empty($data['postBodyError']) && 
+                empty($data['postImageError']) && empty($data['postTag'])) {
                     
                 if ($this->postModel->addPost($data)) {
                         header("Location: " . URLROOT . "/posts");
@@ -71,7 +76,7 @@ class Posts extends Controller {
                 $this->view('posts/create', $data);
             }
         }
-
+        
         $this->view('posts/create', $data);
     }
 

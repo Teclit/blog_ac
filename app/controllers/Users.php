@@ -16,7 +16,7 @@ class Users extends Controller {
             'confirmPasswordError' => ''
         ];
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Process form
         // Sanitize POST data
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -123,13 +123,14 @@ class Users extends Controller {
             //Check if all errors are empty
             if (empty($data['usernameError']) && empty($data['passwordError'])) {
                 $loggedInUser = $this->userModel->login($data['userName'], $data['userPassword']); //call Methode user
-
-                if ($loggedInUser) {
-                    $this->createUserSession($loggedInUser);
-                } else {
-                    $data['passwordError'] = 'Password or username is incorrect. Please try again.';
-                    $this->view('users/login', $data);
-                }
+                
+                print_r($loggedInUser);
+                // if ($loggedInUser) {
+                //     $this->createUserSession($loggedInUser);
+                // } else {
+                //     $data['passwordError'] = 'Password or username is incorrect. Please try again.';
+                //     $this->view('users/login', $data);
+                // }
             }
 
         } else {
