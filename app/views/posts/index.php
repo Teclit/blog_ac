@@ -11,7 +11,7 @@
             
     <section class="container my-4">
         <div class="row g-0">
-            <p class="fs-2 fw-bold"> <span class="fs-1 me-1" >|</span>ነገራት<hr></p>
+            <p class="fs-2 fw-bold"> <span class="fs-1" >|</span>ነገራት<hr></p>
         </div>
         <div class="row">
             <?php foreach($data['posts'] as $post): ?>
@@ -25,10 +25,17 @@
                             <a href="<?php echo URLROOT; ?>/pages/fullpost" target="_blank">
                                 <h5 class="fw-bold textJustify "><?php if (strlen($post->postTitle)>50) { $post->postTitle = substr($post->postTitle,0,50)."...";} echo $post->postTitle; ?> </h5>
                             </a>
-                            <p class="text-start "><span class="badge bg-dark text-light me-3">News</span><?php echo date('F j, Y, g:i a', strtotime($post->postCreated_at)) ?></p>
+                            <p class="text-start "><span class="badge bg-dark text-light me-3"><?php echo $post->categoryName;?></span><?php echo date('F j, Y, g:i a', strtotime($post->postCreated_at)) ?></p>
                             <p class="textJustify ">
                                 <?php if (strlen($post->postBody)>150) { $post->postBody = substr($post->postBody,0,150)."...";} echo $post->postBody; ?>
                             </p>
+                        </div>
+                        <div class="row justify-content-between">
+                            
+                            <form action="<?php echo URLROOT . "/posts/delete/" . $post->postID?>" method="POST">
+                                <a class="btn btn-warning" href="<?php echo URLROOT . "/posts/update/" . $post->postID ?>">Update</a>
+                                <input type="submit" name="delete" value="Delete" class="btn btn-danger">
+                            </form>
                         </div>
 
                         </div>

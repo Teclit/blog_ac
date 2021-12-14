@@ -19,29 +19,33 @@ class Posts extends Controller {
         $category = $this->postModel->findAllCategory();
 
         $data = [
-            'category' => $category,
-            'postTitle' => '',
-            'body' => '',
+            'category'       =>$category,
+            'postTitle'      =>'',
+            'body'           =>'',
+            'postImage'      =>'',
+            'postCategory'   =>'',
+            'postTag'        =>'',
+
             'postTitleError' => '',
-            'postBodyError' => '',
-            'postTagError' => '',
+            'postBodyError'  => '',
+            'postTagError'   => '',
             'postImageError' => ''
         ];
         
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
+            
             $data = [
-                'userID'       =>  1,//$_SESSION['userID'],
                 'postTitle'    => trim($_POST['postTitle']),
                 'postBody'     => trim($_POST['postBody']),
-                'postCategory' => trim($_POST['postCategory']),
                 'postTag'      => trim($_POST['postTag']),
                 'postImage'    => trim($_FILES["postImage"]["name"]),
+                'postCategory' => trim($_POST['postCategory']), 
+                //'userID'       =>  1,//$_SESSION['userID'],
                 
                 'postTitleError' => '',
                 'postBodyError' => '',
-                'postCategory' => '',
+                'postCategoryError' => '',
                 'postTagError' => '',
                 'postImageError' => ''
             ];
@@ -59,18 +63,18 @@ class Posts extends Controller {
             }
 
             if(empty($data['postTag'])) {
-                $data['postImageError'] = 'The Tag of a post must be  a Character';
+                $data['postTagError'] = 'The Tag of a post must be  a Character';
             } 
             
 
-            if (empty($data['postTitleError']) && empty($data['postBodyError']) && 
-                empty($data['postImageError']) && empty($data['postTag'])) {
+            if ( empty($data['postTitleError']) && empty($data['postBodyError']) && 
+                empty($data['postImageError']) && empty($data['postTagError']) ) {
                     
                 if ($this->postModel->addPost($data)) {
-                        header("Location: " . URLROOT . "/posts");
-                    } else {
-                        die("Something went wrong, please try again!");
-                    }
+                        header("Location: " . URLROOT . "/Posts");
+                } else {
+                    die("Something went wrong, please try again!");
+                }
                 
             } else {
                 $this->view('posts/create', $data);
@@ -80,57 +84,71 @@ class Posts extends Controller {
         $this->view('posts/create', $data);
     }
 
-    public function update($id) {
+    public function update($postID) {
 
-        $post = $this->postModel->findPostById($id);
-
-        if(!isLoggedIn()) {
-            header("Location: " . URLROOT . "/posts");
-        } elseif($post->userID != $_SESSION['userID']){
-            header("Location: " . URLROOT . "/posts");
-        }
+        $post = $this->postModel->findPostById($postID);
+        $category = $this->postModel->findAllCategory();
 
         $data = [
-            'post' => $post,
-            'postTitle ' => '',
-            'body' => '',
-            'postTitle Error' => '',
-            'postBodyError' => '',
-            'postImageError' => ''
+            'updateCategory'    =>$category,
+            'updatePost'        => $post,
+            'updatePostTitle'   =>'',
+            'updatePostBody'    =>'',
+            'updatePostImage'   =>'',
+            'updatePostCategory'=>'',
+            'updatePostTag'     =>'',
+
+            'updatePostTitleError'       => '',
+            'updatePostBodyError'        => '',
+            'updatePostTagError'         => '',
+            'updatePostCategoryError'    => '',
+            'updatePostImageError'       => ''
         ];
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'id' => $id,
+                'updatePostID' => $postID,
                 'post' => $post,
-                'userID' => $_SESSION['userID'],
-                'postTitle ' => trim($_POST['postTitle ']),
-                'body' => trim($_POST['body']),
-                'postTitle Error' => '',
-                'postBodyError' => '',
-                'postImageError' => ''
+                // 'userID' => $_SESSION['userID'],
+                // 'updateCategory'    =>$category,
+                'updatePost'            =>$post,
+                'updatePostTitle'       =>trim($_POST['updatePostTitle']),
+                'updatePostBody'        =>trim($_POST['updatePostBody']),
+                'updatePostImage'       =>trim($_FILES["updatePostImage"]["name"]), //trim($_POST['updatePostImage']),
+                'updatePostCategory'    =>trim($_POST['updatePostCategory']),
+                'updatePostTag'         =>trim($_POST['updatePostTag']),
+
+                'updatePostTitleError'      => '',
+                'updatePostBodyError'       => '',
+                'updatePostTagError'        => '',
+                'updatePostCategoryError'   => '',
+                'updatePostImageError'      => ''
             ];
 
-            if(empty($data['postTitle'])) {
-                $data['postTitleError'] = 'The postTitle  of a post cannot be empty';
+        
+
+            if(empty($data['updatePostTitle'])) {
+                $data['updatePostTitleError'] = 'The postTitle  of a post cannot be empty';
             }
 
-            if(empty($data['postBody'])) {
-                $data['postBodyError'] = 'The body of a post cannot be empty';
+            if(empty($data['updatePostBody'])) {
+                $data['updatePostBodyError'] = 'The body of a post cannot be empty';
             }
 
-            if($data['postTitle'] == $this->postModel->findPostById($id)->postTitle ) {
-                $data['postTitleError'] == 'At least change the postTitle !';
+            if($data['updatePostTitle'] == $this->postModel->findPostById($postID)->postTitle ) {
+                $data['updatePostTitleError'] == 'At least change the postTitle !';
             }
 
-            if($data['postBody'] == $this->postModel->findPostById($id)->body) {
-                $data['postBodyError'] == 'At least change the body!';
+            if($data['updatePostBody'] == $this->postModel->findPostById($postID)->postBody) {
+                $data['updatePostBodyError'] == 'At least change the body!';
             }
 
-            if (empty($data['postTitleError']) && empty($data['postBodyError'])) {
+            if (empty($data['updatePostTitleError']) && empty($data['updatePostBodyError'])) {
+
                 if ($this->postModel->updatePost($data)) {
+                    
                     header("Location: " . URLROOT . "/posts");
                 } else {
                     die("Something went wrong, please try again!");
@@ -143,9 +161,9 @@ class Posts extends Controller {
         $this->view('posts/update', $data);
     }
 
-    public function delete($id) {
+    public function delete($postID) {
 
-        $post = $this->postModel->findPostById($id);
+        $post = $this->postModel->findPostById($postID);
 
         if(!isLoggedIn()) {
             header("Location: " . URLROOT . "/posts");
@@ -164,10 +182,10 @@ class Posts extends Controller {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-            if($this->postModel->deletePost($id)) {
+            if($this->postModel->deletePost($postID)) {
                     header("Location: " . URLROOT . "/posts");
             } else {
-               die('Something went wrong!');
+                die('Something went wrong!');
             }
         }
     }
