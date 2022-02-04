@@ -44,8 +44,6 @@ if(isset($_POST["submit"])) {
 
     function imageResize($imageResourceId,$width,$height) {
         // Make a fixed Width & Height but it might make the image look longer or wider
-        /*$targetWidth = 50;
-        $targetHeight = 50;*/
         // Keep the Image Ratio of Width & Height
         $maxDim = 50;
         $ratio = $width/$height;
